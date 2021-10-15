@@ -200,8 +200,6 @@ class ApplicationCommand extends Base {
       ('description' in command && command.description !== this.description) ||
       ('version' in command && command.version !== this.version) ||
       (commandType && commandType !== this.type) ||
-      // Future proof for options being nullable
-      // TODO: remove ?? 0 on each when nullable
       (command.options?.length ?? 0) !== (this.options?.length ?? 0) ||
       (command.defaultPermission ?? command.default_permission ?? true) !== this.defaultPermission
     ) {
